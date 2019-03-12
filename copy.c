@@ -19,7 +19,12 @@ int main(int argc, char *argv[])
 	char buf[BUF_SIZE];
 
 	fd1 = open(argv[1], O_RDONLY); // Open read file
+	if(fd1==-1)
+		printf("%s open error\n",argv[1]);
+
 	fd2 = open(argv[2],O_WRONLY|O_CREAT|O_TRUNC, 0644);  // Open write file
+	if(fd2==-1)
+		printf("%s open error\n", argv[2]);
 
 	// read & write
 	while((len=read(fd1, buf, sizeof(buf)))>0)
