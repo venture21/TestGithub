@@ -5,6 +5,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <pwd.h>	// getpwuid()
+#include <grp.h>	// getgrgid()
+
+#define PERM_LENGTH 	11
+#define PATH_LENGTH 	100
+
+#define DEBUG
 
 //=========================================
 // dirent 구조체
@@ -76,37 +83,82 @@ void access_perm(char *perm, mode_t mode)
 
 int main(int argc, char *argv[])
 {
-	DIR *dp;				// DIR pointer
+	DIR *dp;		// DIR pointer
 	struct stat statbuf;	// inode info
 	struct dirent *dent;
 
-	char perm[11];
-	char pathname[80];
-	
-	if (argc < 2) 
-		exit(1);
+	char perm[PERM_LENGTH];
+	char pathname[PATH_LENGTH];
+	char dirname[PATH_LENGTH];
+	int flag;
+	char temp[20];
 
-	stat(argv[1], &statbuf);
+
+	if (argc==1)	
+		flag = 0;
+		strcpy(dirname,".");
+
+	if(argc>1)
+	{
+		// "-al" 문자열을 비교
+		sprintf(temp,"-al");
+        	if(!strcmp(temp,argv[1]))
+		{
+			flag = 1;
+			strcpy(dirname,".");
+		}
+		else
+		{
+			flag = 2;
+			strcpy(dirname, argv[1]);
+		}
+	}
+
+	if(argc>2)
+	{
+		flag = 3;
+		strcpy(dirname, argv[1]);
+	}
+		
+#ifdef DEBUG		
+	printf("dir=%s\n",dirname);
+	printf("flag=%d\n",flag);
+#endif
+
+	// 디렉토리의 inode정보 읽기
+	stat(dirname, &statbuf);
+
+	// 디렉토리가 아닌경우 에러 메시지 출력 후 종료
 	if (!S_ISDIR(statbuf.st_mode)) 
 	{
-		fprintf(stderr, "%s is not directory\n",argv[1]);
+		fprintf(stderr, "%s is not directory\n",dirname);
 		exit(1);
 	}
 
-	if ((dp = opendir(argv[1])) == NULL) 
+	// 디렉토리가 정상적으로 열리지 않은 경우
+	if ((dp = opendir(dirname)) == NULL) 
 	{
 		perror("Error:");
 		exit(1);
 	}
 	
-	printf("Lists of Directory(%s):\n", argv[1]);
+	// 정상적으로 열리면 디렉토리명을 출력
+	printf("Lists of Directory(%s):\n", dirname);
 
+	// 디렉토리의 내용을 읽어온다. 
+	// 더이상 읽을 디렉토리 내용이 없을 때 까지
 	while((dent = readdir(dp)) != NULL) 
 	{
-		sprintf(pathname, "%s/%s", argv[1], dent->d_name);
-		lstat(pathname, &statbuf);
-		access_perm(perm, statbuf.st_mode);
-		printf("%s %8ld %s\n", perm,statbuf.st_size, dent->d_name);
+		if(flag==1 | flag==3)
+		{
+			sprintf(pathname, "%s/%s", dirname, dent->d_name);
+			lstat(pathname, &statbuf);
+			access_perm(perm, statbuf.st_mode);
+			printf("%s %ld %8ld %s\n", perm, statbuf.st_nlink, statbuf.st_size, dent->d_name);
+		}
+		else
+		{
+		}
 	}
 	closedir(dp);
 

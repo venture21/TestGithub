@@ -4,16 +4,22 @@
 #include <stdlib.h>
 #include <errno.h>
 
-const char *path = ".";
+//const char *path = ".";
 
-int main(void)
+int main(int argc, char *argv[])
 {
     struct  dirent **namelist;
     int     count;
     int     idx;
 
-    if((count = scandir(path, &namelist, NULL, alphasort)) == -1) {
-        fprintf(stderr, "%s Directory Scan Error: %s\n", path, strerror(errno));
+    if(argc<2)
+    {
+	printf("argv[1] is empty\n");
+	return 1;
+    }
+
+    if((count = scandir(argv[1], &namelist, NULL, alphasort)) == -1) {
+        fprintf(stderr, "%s Directory Scan Error: %s\n", argv[1], strerror(errno));
         return 1;
     }
 
