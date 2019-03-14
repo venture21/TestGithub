@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include <pwd.h>	// getpwuid()
 #include <grp.h>	// getgrgid()
 
@@ -48,6 +49,35 @@ struct stat {
 };
 */
 
+//=========================================
+// group 구조체
+//=========================================
+/*
+struct group {
+    char   *gr_name;       // group name 
+    char   *gr_passwd;     // group password 
+    gid_t   gr_gid;        // group ID 
+    char  **gr_mem;        // group members 
+};
+*/
+
+//=========================================
+// group 구조체
+//=========================================
+/*
+struct passwd {
+	char *pw_name;
+	char *pw_passwd;
+	uid_t pw_uid;
+	gid_t pw_gid;
+	time_t pw_change;
+	char *pw_class;
+	char *pw_gecos;
+	char *pw_dir;
+	char *pw_shell;
+	time_t pw_expire;
+}; 
+*/
 
 //=========================================
 // Function Name : access Name
@@ -86,12 +116,18 @@ int main(int argc, char *argv[])
 	DIR *dp;		// DIR pointer
 	struct stat statbuf;	// inode info
 	struct dirent *dent;
+	struct group *group_entry;
+	struct passwd *user_pw;
 
 	char perm[PERM_LENGTH];
 	char pathname[PATH_LENGTH];
 	char dirname[PATH_LENGTH];
+
 	int flag;
 	char temp[20];
+
+	//time
+	struct tm *tm;
 
 
 	if (argc==1)	
@@ -117,7 +153,7 @@ int main(int argc, char *argv[])
 	if(argc>2)
 	{
 		flag = 3;
-		strcpy(dirname, argv[1]);
+		strcpy(dirname, argv[2]);
 	}
 		
 #ifdef DEBUG		
@@ -154,7 +190,11 @@ int main(int argc, char *argv[])
 			sprintf(pathname, "%s/%s", dirname, dent->d_name);
 			lstat(pathname, &statbuf);
 			access_perm(perm, statbuf.st_mode);
-			printf("%s %ld %8ld %s\n", perm, statbuf.st_nlink, statbuf.st_size, dent->d_name);
+			user_pw=getpwuid(statbuf.st_uid);
+			group_entry=getgrgid(statbuf.st_gid);
+			tm = localtime(&statbuf.st_mtime); 
+			strftime(temp, sizeof(temp), "%m월 %e %H:%M", tm); // 사용자 정의 문자열 지정
+			printf("%s %ld %8s %8s %8ld %s %s\n", perm, statbuf.st_nlink, user_pw->pw_name, group_entry->gr_name, statbuf.st_size, temp, dent->d_name);
 		}
 		else
 		{
