@@ -156,7 +156,7 @@ int main(int argc, char *argv[])
 		strcpy(dirname, argv[2]);
 	}
 		
-#ifdef DEBUG		
+#ifdef DEBUG	
 	printf("dir=%s\n",dirname);
 	printf("flag=%d\n",flag);
 #endif
@@ -178,8 +178,10 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 	
+#ifdef DEBUG
 	// 정상적으로 열리면 디렉토리명을 출력
 	printf("Lists of Directory(%s):\n", dirname);
+#endif
 
 	// 디렉토리의 내용을 읽어온다. 
 	// 더이상 읽을 디렉토리 내용이 없을 때 까지
@@ -193,8 +195,10 @@ int main(int argc, char *argv[])
 			user_pw=getpwuid(statbuf.st_uid);
 			group_entry=getgrgid(statbuf.st_gid);
 			tm = localtime(&statbuf.st_mtime); 
-			strftime(temp, sizeof(temp), "%m월 %e %H:%M", tm); // 사용자 정의 문자열 지정
-			printf("%s %ld %8s %8s %8ld %s %s\n", perm, statbuf.st_nlink, user_pw->pw_name, group_entry->gr_name, statbuf.st_size, temp, dent->d_name);
+			strftime(temp, sizeof(temp), "%m월 %e %H:%M", tm);
+			printf("%s %3ld %6s %6s %8ld %s %s\n", \
+				perm, statbuf.st_nlink, user_pw->pw_name, \
+				group_entry->gr_name, statbuf.st_size, temp, dent->d_name);
 		}
 		else
 		{
