@@ -1,2 +1,3 @@
-# TestGithub
-Github Test Repo
+# 임베디드 기반 IoT과정
+2019년 1월 28일 ~ 7월 27일
+
