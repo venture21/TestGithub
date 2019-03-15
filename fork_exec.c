@@ -27,7 +27,7 @@ void my_execv(const char *path, char *const argv[])
 		}
     }
 
-    waitpid(-1, NULL, 0);
+    wait(NULL);
 }
 
 int main() 
@@ -35,7 +35,6 @@ int main()
     char path[] = "/bin/ls";
     char *argv_ls[] = { "ls", "-al", NULL };
 
-    
     my_execv(path, argv_ls);
 
     return 0;
