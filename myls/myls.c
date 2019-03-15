@@ -202,6 +202,7 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
+			printf("%s
 		}
 	}
 	closedir(dp);
