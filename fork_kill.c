@@ -23,12 +23,17 @@ void pr_exit(int status)
 
 
 
-static void sig_handler(int signum)
+static void sig_killhandler(int signum)
 {
-	printf("I got signal : signum=%d\n",signum);
+	printf("sig_killhandler : signum=%d\n",signum);
 	exit(0);
 }
 
+static void sig_inthandler(int signum)
+{
+	printf("sig_inthandler : signum=%d\n",signum);
+	exit(0);
+}
 
 int main(void)
 {
@@ -47,7 +52,12 @@ int main(void)
 	}
 	else if(pid==0)
 	{
-		signal(SIGKILL,sig_handler);
+		if(signal(SIGKILL,sig_killhandler)==SIG_ERR)
+			printf("\ncan't catch SIGKILL\n");
+
+		if(signal(SIGINT,sig_inthandler)==SIG_ERR)
+			printf("\ncan't catch SIGINT\n");
+
 		while(1)
 		{
 			printf("Hello world\n");
