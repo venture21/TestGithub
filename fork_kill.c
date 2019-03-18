@@ -4,6 +4,24 @@
 #include <signal.h>		// signal(), kill()
 #include <stdlib.h>
 
+void pr_exit(int status)
+{
+	// 정상 종료인 경우
+	if (WIFEXITED(status))
+	    printf("normal termination, exit status = %d\n", WEXITSTATUS(status));
+
+	// 시그널에 의해서 종료된 경우
+	else if (WIFSIGNALED(status))
+	    printf("abnormal termination, signal number = %d%s\n",WTERMSIG(status),
+				WCOREDUMP(status) ? "(core file generated)" : "");
+
+	// 시그널에 의해 STOP된 경우
+	else if (WIFSTOPPED(status))
+	    printf("child stopped, signal number = %d\n", WSTOPSIG(status));
+
+}
+
+
 
 static void sig_handler(int signum)
 {
@@ -15,6 +33,7 @@ static void sig_handler(int signum)
 int main(void)
 {
 
+	int status;
 	pid_t pid;
 
 	pid=fork();
@@ -41,7 +60,8 @@ int main(void)
 		kill(pid,SIGKILL);
 	}
 
-	wait(NULL);
+	wait(&status);
+	pr_exit(status);
 
 	return 0;
 }
