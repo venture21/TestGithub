@@ -3,6 +3,7 @@
 #include <wait.h>		// wait()
 #include <signal.h>		// signal(), kill()
 #include <stdlib.h>
+#include <string.h>
 
 void pr_exit(int status)
 {
@@ -39,7 +40,14 @@ int main(void)
 {
 
 	int status;
+	char *temp;
 	pid_t pid;
+
+	temp = strsignal(SIGINT);
+	printf("%s\n",temp);	
+
+	temp = strsignal(SIGKILL);
+	printf("%s\n",temp);
 
 	pid=fork();
 
@@ -52,6 +60,7 @@ int main(void)
 	}
 	else if(pid==0)
 	{
+		// handler에 등록이 불가능한 시그널
 		if(signal(SIGKILL,sig_killhandler)==SIG_ERR)
 			printf("\ncan't catch SIGKILL\n");
 
