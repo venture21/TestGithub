@@ -74,15 +74,18 @@ int main(int argc, char *argv[])
 	{
 		if (cnt < 9)
 		{
+			p();
 			cnt++;
 			v();
 			printf("increase :%d\n", cnt);
 			usleep(100);
+
 		}
 		else
 		{
 			p();
 			cnt--;
+			v();
 			printf("decrease :%d\n", cnt);
 			break;
 		}
