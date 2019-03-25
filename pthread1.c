@@ -20,7 +20,8 @@ void* t_function(void* data)
 	argData = *((int*)data);
 	t_id = pthread_self();
 	sleep(argData);
-	printf("getpid=%d, tid=%lu, argData:%d\n, glob_var:%d", getpid(), t_id, argData, glob_var);
+	printf("getpid=%d, tid=%lu, argData:%d, glob_var:%d\n", getpid(), t_id, argData, glob_var);
+	printf("heap memory access\n");
 	for (i = 0; i < 4; i++)
 	{
 		printf("%d ", *(addr+i));
