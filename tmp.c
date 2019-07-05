@@ -11,12 +11,12 @@ int main(void)
 	int ret;
 
 	//====================================================
-	// int execl(const char *path, const char *arg, ...)
-	// 디렉토리+파일이름을 path와 arg로 입력해 준다.
+	// int execlp(const char *file, const char *arg, ...)
+	// 파일이름을 path와 arg로 입력해 준다.
 	//====================================================
-	ret = execl("/bin/ps", "/bin/ps -ax", NULL);
-	fprintf(stderr, "execl error: %s\n",strerror(errno));
+	ret = execlp("./BlackBox", "BlackBox", NULL);
+	fprintf(stderr, "execlp error: %s\n",strerror(errno));
 
-	printf("execl:%d\n",ret);
+	printf("execlp:%d\n",ret);
 	return 0;
 }

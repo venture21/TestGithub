@@ -14,15 +14,15 @@ static void sigHandler(int sig)
 		printf("Caught SIGINT (%d)\n", count);
 		return; /* Resume execution at point of interruption */
 	}
-	else //if(sig==SIGQUIT)
+	else //if(sig==SIGUSR1)
 	{
 		printf("Caught SIGQUIT (%d)\n", count);
-		//return; /* Resume execution at point of interruption */		
+		return; /* Resume execution at point of interruption */		
 	}
 
 	// Must be SIGQUIT - print a message and terminate the process 
-	printf("Caught SIGQUIT - that's all folks!\n");
-	exit(0);
+	printf("Caught SIGUSR1 - that's all folks!\n");
+	//exit(0);
 }
 
 
@@ -35,6 +35,6 @@ int main(int argc, char *argv[])
 	if (signal(SIGQUIT, sigHandler) == SIG_ERR)
 		return -1;
 
-	for (;;) /* Loop forever, waiting for signals */
-		pause(); /* Block until a signal is caught */
+	for (;;); /* Loop forever, waiting for signals */
+	pause(); /* Block until a signal is caught */
 }
