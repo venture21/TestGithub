@@ -1,0 +1,377 @@
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0 10:52 ?        00:00:03 /sbin/init splash
+root         2     0  0 10:52 ?        00:00:00 [kthreadd]
+root         4     2  0 10:52 ?        00:00:00 [kworker/0:0H]
+root         6     2  0 10:52 ?        00:00:00 [mm_percpu_wq]
+root         7     2  0 10:52 ?        00:00:00 [ksoftirqd/0]
+root         8     2  0 10:52 ?        00:00:39 [rcu_sched]
+root         9     2  0 10:52 ?        00:00:00 [rcu_bh]
+root        10     2  0 10:52 ?        00:00:00 [migration/0]
+root        11     2  0 10:52 ?        00:00:00 [watchdog/0]
+root        12     2  0 10:52 ?        00:00:00 [cpuhp/0]
+root        13     2  0 10:52 ?        00:00:00 [cpuhp/1]
+root        14     2  0 10:52 ?        00:00:00 [watchdog/1]
+root        15     2  0 10:52 ?        00:00:00 [migration/1]
+root        16     2  0 10:52 ?        00:00:00 [ksoftirqd/1]
+root        18     2  0 10:52 ?        00:00:00 [kworker/1:0H]
+root        19     2  0 10:52 ?        00:00:00 [cpuhp/2]
+root        20     2  0 10:52 ?        00:00:00 [watchdog/2]
+root        21     2  0 10:52 ?        00:00:00 [migration/2]
+root        22     2  0 10:52 ?        00:00:00 [ksoftirqd/2]
+root        24     2  0 10:52 ?        00:00:00 [kworker/2:0H]
+root        25     2  0 10:52 ?        00:00:00 [cpuhp/3]
+root        26     2  0 10:52 ?        00:00:00 [watchdog/3]
+root        27     2  0 10:52 ?        00:00:00 [migration/3]
+root        28     2  0 10:52 ?        00:00:00 [ksoftirqd/3]
+root        30     2  0 10:52 ?        00:00:00 [kworker/3:0H]
+root        31     2  0 10:52 ?        00:00:00 [cpuhp/4]
+root        32     2  0 10:52 ?        00:00:00 [watchdog/4]
+root        33     2  0 10:52 ?        00:00:00 [migration/4]
+root        34     2  0 10:52 ?        00:00:00 [ksoftirqd/4]
+root        36     2  0 10:52 ?        00:00:00 [kworker/4:0H]
+root        37     2  0 10:52 ?        00:00:00 [cpuhp/5]
+root        38     2  0 10:52 ?        00:00:00 [watchdog/5]
+root        39     2  0 10:52 ?        00:00:00 [migration/5]
+root        40     2  0 10:52 ?        00:00:00 [ksoftirqd/5]
+root        42     2  0 10:52 ?        00:00:00 [kworker/5:0H]
+root        43     2  0 10:52 ?        00:00:00 [cpuhp/6]
+root        44     2  0 10:52 ?        00:00:00 [watchdog/6]
+root        45     2  0 10:52 ?        00:00:00 [migration/6]
+root        46     2  0 10:52 ?        00:00:00 [ksoftirqd/6]
+root        48     2  0 10:52 ?        00:00:00 [kworker/6:0H]
+root        49     2  0 10:52 ?        00:00:00 [cpuhp/7]
+root        50     2  0 10:52 ?        00:00:00 [watchdog/7]
+root        51     2  0 10:52 ?        00:00:00 [migration/7]
+root        52     2  0 10:52 ?        00:00:00 [ksoftirqd/7]
+root        54     2  0 10:52 ?        00:00:00 [kworker/7:0H]
+root        55     2  0 10:52 ?        00:00:00 [cpuhp/8]
+root        56     2  0 10:52 ?        00:00:00 [watchdog/8]
+root        57     2  0 10:52 ?        00:00:00 [migration/8]
+root        58     2  0 10:52 ?        00:00:00 [ksoftirqd/8]
+root        60     2  0 10:52 ?        00:00:00 [kworker/8:0H]
+root        61     2  0 10:52 ?        00:00:00 [cpuhp/9]
+root        62     2  0 10:52 ?        00:00:00 [watchdog/9]
+root        63     2  0 10:52 ?        00:00:00 [migration/9]
+root        64     2  0 10:52 ?        00:00:00 [ksoftirqd/9]
+root        66     2  0 10:52 ?        00:00:00 [kworker/9:0H]
+root        67     2  0 10:52 ?        00:00:00 [cpuhp/10]
+root        68     2  0 10:52 ?        00:00:00 [watchdog/10]
+root        69     2  0 10:52 ?        00:00:00 [migration/10]
+root        70     2  0 10:52 ?        00:00:00 [ksoftirqd/10]
+root        72     2  0 10:52 ?        00:00:00 [kworker/10:0H]
+root        73     2  0 10:52 ?        00:00:00 [cpuhp/11]
+root        74     2  0 10:52 ?        00:00:00 [watchdog/11]
+root        75     2  0 10:52 ?        00:00:00 [migration/11]
+root        76     2  0 10:52 ?        00:00:00 [ksoftirqd/11]
+root        78     2  0 10:52 ?        00:00:00 [kworker/11:0H]
+root        79     2  0 10:52 ?        00:00:00 [kdevtmpfs]
+root        80     2  0 10:52 ?        00:00:00 [netns]
+root        81     2  0 10:52 ?        00:00:00 [rcu_tasks_kthre]
+root        82     2  0 10:52 ?        00:00:00 [kauditd]
+root        83     2  0 10:52 ?        00:00:00 [kworker/0:1]
+root        85     2  0 10:52 ?        00:00:00 [khungtaskd]
+root        86     2  0 10:52 ?        00:00:00 [oom_reaper]
+root        87     2  0 10:52 ?        00:00:00 [writeback]
+root        88     2  0 10:52 ?        00:00:00 [kcompactd0]
+root        89     2  0 10:52 ?        00:00:00 [ksmd]
+root        90     2  0 10:52 ?        00:00:00 [khugepaged]
+root        91     2  0 10:52 ?        00:00:00 [crypto]
+root        92     2  0 10:52 ?        00:00:00 [kintegrityd]
+root        93     2  0 10:52 ?        00:00:00 [kblockd]
+root        94     2  0 10:52 ?        00:00:01 [kworker/3:1]
+root        95     2  0 10:52 ?        00:00:00 [kworker/4:1]
+root        99     2  0 10:52 ?        00:00:04 [kworker/8:1]
+root       103     2  0 10:52 ?        00:00:00 [ata_sff]
+root       104     2  0 10:52 ?        00:00:00 [md]
+root       105     2  0 10:52 ?        00:00:00 [edac-poller]
+root       106     2  0 10:52 ?        00:00:00 [devfreq_wq]
+root       107     2  0 10:52 ?        00:00:00 [watchdogd]
+root       110     2  0 10:52 ?        00:00:00 [kswapd0]
+root       111     2  0 10:52 ?        00:00:00 [kworker/u25:0]
+root       112     2  0 10:52 ?        00:00:00 [ecryptfs-kthrea]
+root       154     2  0 10:52 ?        00:00:00 [kthrotld]
+root       155     2  0 10:52 ?        00:00:00 [kworker/2:1]
+root       156     2  0 10:52 ?        00:00:00 [acpi_thermal_pm]
+root       161     2  0 10:52 ?        00:00:00 [ipv6_addrconf]
+root       170     2  0 10:52 ?        00:00:00 [kstrp]
+root       191     2  0 10:52 ?        00:00:00 [charger_manager]
+root       251     2  0 10:52 ?        00:00:00 [nvme-wq]
+root       253     2  0 10:52 ?        00:00:00 [scsi_eh_0]
+root       254     2  0 10:52 ?        00:00:00 [scsi_tmf_0]
+root       255     2  0 10:52 ?        00:00:00 [scsi_eh_1]
+root       256     2  0 10:52 ?        00:00:00 [scsi_tmf_1]
+root       257     2  0 10:52 ?        00:00:00 [scsi_eh_2]
+root       258     2  0 10:52 ?        00:00:00 [scsi_tmf_2]
+root       259     2  0 10:52 ?        00:00:00 [scsi_eh_3]
+root       260     2  0 10:52 ?        00:00:00 [scsi_tmf_3]
+root       261     2  0 10:52 ?        00:00:00 [scsi_eh_4]
+root       262     2  0 10:52 ?        00:00:00 [scsi_tmf_4]
+root       263     2  0 10:52 ?        00:00:00 [scsi_eh_5]
+root       264     2  0 10:52 ?        00:00:00 [scsi_tmf_5]
+root       269     2  0 10:52 ?        00:00:16 [i915/signal:0]
+root       270     2  0 10:52 ?        00:00:00 [i915/signal:1]
+root       271     2  0 10:52 ?        00:00:00 [i915/signal:2]
+root       272     2  0 10:52 ?        00:00:00 [i915/signal:4]
+root       276     2  0 10:52 ?        00:00:00 [nvkm-disp]
+root       282     2  0 10:52 ?        00:00:00 [kworker/8:1H]
+root       283     2  0 10:52 ?        00:00:00 [ttm_swap]
+root       306     2  0 10:52 ?        00:00:00 [kworker/3:1H]
+root       307     2  0 10:52 ?        00:00:00 [kworker/4:1H]
+root       309     2  0 10:52 ?        00:00:00 [jbd2/nvme0n1p3-]
+root       310     2  0 10:52 ?        00:00:00 [ext4-rsv-conver]
+root       348     1  0 10:52 ?        00:00:00 /lib/systemd/systemd-journald
+root       353     2  0 10:52 ?        00:00:00 [kworker/6:2]
+root       374     1  0 10:52 ?        00:00:00 /lib/systemd/systemd-udevd
+root       413     2  0 10:52 ?        00:00:00 [kworker/11:2]
+root       559     2  0 10:52 ?        00:00:00 [cfg80211]
+root       587     2  0 10:52 ?        00:00:02 [irq/141-iwlwifi]
+root       589     2  0 10:52 ?        00:00:01 [irq/142-iwlwifi]
+root       592     2  0 10:52 ?        00:00:00 [irq/143-iwlwifi]
+root       600     2  0 10:52 ?        00:00:00 [irq/144-iwlwifi]
+root       601     2  0 10:52 ?        00:00:00 [irq/145-iwlwifi]
+root       610     2  0 10:52 ?        00:00:00 [irq/146-iwlwifi]
+root       611     2  0 10:52 ?        00:00:00 [irq/147-iwlwifi]
+root       612     2  0 10:52 ?        00:00:00 [irq/148-iwlwifi]
+root       613     2  0 10:52 ?        00:00:00 [irq/149-iwlwifi]
+root       614     2  0 10:52 ?        00:00:00 [irq/150-iwlwifi]
+root       617     2  0 10:52 ?        00:00:00 [irq/151-iwlwifi]
+root       619     2  0 10:52 ?        00:00:00 [irq/152-iwlwifi]
+root       620     2  0 10:52 ?        00:00:00 [irq/153-iwlwifi]
+root       621     2  0 10:52 ?        00:00:00 [irq/154-iwlwifi]
+root       705     2  0 10:52 ?        00:00:00 [kworker/u25:2]
+root       819     2  0 10:52 ?        00:00:00 [jbd2/sda1-8]
+root       822     2  0 10:52 ?        00:00:00 [ext4-rsv-conver]
+root       948     2  0 10:52 ?        00:00:00 [kmemstick]
+root      1048     1  0 10:52 ?        00:00:00 /usr/sbin/cupsd -l
+syslog    1051     1  0 10:52 ?        00:00:00 /usr/sbin/rsyslogd -n
+root      1057     1  0 10:52 ?        00:00:00 /usr/lib/accountsservice/accounts-daemon
+root      1062     1  0 10:52 ?        00:00:00 /usr/sbin/cron -f
+root      1071     1  0 10:52 ?        00:00:01 /lib/systemd/systemd-logind
+message+  1077     1  0 10:52 ?        00:00:15 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+avahi     1108     1  0 10:52 ?        00:00:02 avahi-daemon: running [venture.local]
+lp        1115  1048  0 10:52 ?        00:00:00 /usr/lib/cups/notifier/dbus dbus://
+lp        1116  1048  0 10:52 ?        00:00:00 /usr/lib/cups/notifier/dbus dbus://
+lp        1117  1048  0 10:52 ?        00:00:00 /usr/lib/cups/notifier/dbus dbus://
+root      1118     1  0 10:52 ?        00:00:00 /usr/sbin/ModemManager
+root      1123     1  0 10:52 ?        00:00:07 /usr/sbin/NetworkManager --no-daemon
+avahi     1125  1108  0 10:52 ?        00:00:00 avahi-daemon: chroot helper
+daemon    1128     1  0 10:52 ?        00:00:00 /usr/sbin/atd -f
+root      1132     2  0 10:52 ?        00:00:00 [kworker/9:1H]
+root      1143     1  0 10:52 ?        00:00:02 /usr/sbin/thermald --no-daemon --dbus-enable
+root      1151     1  0 10:52 ?        00:00:00 /usr/lib/bluetooth/bluetoothd
+root      1157     1  0 10:52 ?        00:00:03 /usr/sbin/acpid
+root      1220     2  0 10:52 ?        00:00:00 [kworker/10:1H]
+root      1223     2  0 10:52 ?        00:00:00 [kworker/2:1H]
+root      1229     1  0 10:52 ?        00:00:01 /usr/sbin/irqbalance --pid=/var/run/irqbalance.pid
+root      1256     1  0 10:52 ?        00:00:04 /usr/lib/policykit-1/polkitd --no-debug
+root      1257     1  0 10:52 ?        00:00:01 /usr/sbin/cups-browsed
+root      1269     1  0 10:52 ?        00:00:00 /usr/sbin/lightdm
+debian-+  1295     1  0 10:52 ?        00:00:04 /usr/bin/transmission-daemon -f --log-error
+root      1310     1  0 10:52 ?        00:00:23 /usr/bin/containerd
+root      1334  1269 10 10:52 tty7     00:17:33 /usr/lib/xorg/Xorg -core :0 -seat seat0 -auth /var/run/lightdm/root/:0 -nolisten tcp vt7 -novtswitch
+root      1426     2  0 10:52 ?        00:00:00 [kworker/0:1H]
+root      1427     2  0 10:52 ?        00:00:00 [kworker/11:1H]
+root      1429     1  0 10:52 ?        00:00:01 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+root      1521     2  0 10:52 ?        00:00:00 [kworker/5:1H]
+root      1522     2  0 10:52 ?        00:00:00 [kworker/6:1H]
+root      1523  1269  0 10:52 ?        00:00:00 lightdm --session-child 12 19
+root      1529     2  0 10:52 ?        00:00:00 [kworker/7:1H]
+rtkit     1592     1  0 10:52 ?        00:00:00 /usr/lib/rtkit/rtkit-daemon
+root      1622     1  0 10:52 ?        00:00:00 /usr/lib/upower/upowerd
+colord    1656     1  0 10:52 ?        00:00:00 /usr/lib/colord/colord
+root      1710     2  0 10:52 ?        00:00:00 [krfcommd]
+root      1758     1  0 10:52 ?        00:00:06 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+whoopsie  1763     1  0 10:52 ?        00:00:00 /usr/bin/whoopsie -f
+root      1778     1  1 10:52 ?        00:03:18 /opt/teamviewer/tv_bin/teamviewerd -d
+_chrony   1797     1  0 10:52 ?        00:00:00 /usr/sbin/chronyd
+root      1825     1  0 10:52 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+root      1852     2  0 10:52 ?        00:00:00 [iprt-VBoxWQueue]
+root      1875     2  0 10:52 ?        00:00:00 [iprt-VBoxTscThr]
+root      1967     1  0 10:52 ?        00:00:00 /usr/sbin/nmbd -D
+root      2016     1  0 10:52 ?        00:00:00 /usr/sbin/smbd -D
+root      2018  2016  0 10:52 ?        00:00:00 /usr/sbin/smbd -D
+root      2021  2016  0 10:52 ?        00:00:00 /usr/sbin/smbd -D
+park      2058     1  0 10:52 ?        00:00:00 /lib/systemd/systemd --user
+park      2060  2058  0 10:52 ?        00:00:00 (sd-pam)
+park      2088     1  0 10:52 ?        00:00:00 /usr/bin/gnome-keyring-daemon --daemonize --login
+park      2090  1523  0 10:52 ?        00:00:00 /sbin/upstart --user
+park      2381  2090  0 10:52 ?        00:00:00 upstart-udev-bridge --daemon --user
+park      2389  2090  0 10:52 ?        00:00:02 dbus-daemon --fork --session --address=unix:abstract=/tmp/dbus-CdDupbUhzr
+park      2401  2090  0 10:52 ?        00:00:00 /usr/lib/x86_64-linux-gnu/hud/window-stack-bridge
+park      2427  2090  0 10:52 ?        00:00:05 /usr/bin/fcitx
+park      2435  2090  0 10:52 ?        00:00:00 upstart-file-bridge --daemon --user
+park      2438  2090  0 10:52 ?        00:00:00 upstart-dbus-bridge --daemon --session --user --bus-name session
+park      2448  2090  0 10:52 ?        00:00:02 upstart-dbus-bridge --daemon --system --user --bus-name system
+park      2454  2090  0 10:52 ?        00:00:05 /usr/bin/dbus-daemon --fork --print-pid 5 --print-address 7 --config-file /usr/share/fcitx/dbus/daemon.conf
+park      2458  2090  0 10:52 ?        00:00:03 /usr/lib/x86_64-linux-gnu/bamf/bamfdaemon
+park      2460  2090  0 10:52 ?        00:00:00 /usr/bin/fcitx-dbus-watcher unix:abstract=/tmp/dbus-WdCNojsEiu,guid=8dead58529de82f43cfaf3d95deefa57 2454
+park      2466  2090  0 10:52 ?        00:00:00 /usr/lib/gvfs/gvfsd
+park      2471  2090  0 10:52 ?        00:00:00 /usr/lib/gvfs/gvfsd-fuse /run/user/1000/gvfs -f -o big_writes
+park      2480  2090  0 10:52 ?        00:00:01 /usr/lib/x86_64-linux-gnu/notify-osd
+nobody    2551  1123  0 10:52 ?        00:00:00 /usr/sbin/dnsmasq --no-resolv --keep-in-foreground --no-hosts --bind-interfaces --pid-file=/var/run/NetworkManager/dnsmasq.pid --listen-address=127.0.1.1 --cache-size=0 --conf-file=/dev/null --proxy-dnssec --enable-dbus=org.freedesktop.NetworkManager.dnsmasq --conf-dir=/etc/NetworkManager/dnsmasq.d
+park      2813  2090  0 10:52 ?        00:00:00 gpg-agent --homedir /home/park/.gnupg --use-standard-socket --daemon
+park      2825  2090  0 10:52 ?        00:00:00 /usr/lib/x86_64-linux-gnu/hud/hud-service
+park      2827  2090  0 10:52 ?        00:00:01 /usr/lib/unity-settings-daemon/unity-settings-daemon
+park      2838  2090  0 10:52 ?        00:00:00 /usr/lib/at-spi2-core/at-spi-bus-launcher --launch-immediately
+park      2840  2090  0 10:52 ?        00:00:00 /usr/lib/gnome-session/gnome-session-binary --session=ubuntu
+park      2848  2838  0 10:52 ?        00:00:00 /usr/bin/dbus-daemon --config-file=/etc/at-spi2/accessibility.conf --nofork --print-address 3
+park      2854  2090  0 10:52 ?        00:00:06 /usr/lib/x86_64-linux-gnu/unity/unity-panel-service
+park      2863  2090  0 10:52 ?        00:00:01 /usr/lib/at-spi2-core/at-spi2-registryd --use-gnome-session
+park      2889  2090  0 10:52 ?        00:00:00 /usr/lib/x86_64-linux-gnu/indicator-messages/indicator-messages-service
+park      2890  2090  0 10:52 ?        00:00:00 /usr/lib/x86_64-linux-gnu/indicator-bluetooth/indicator-bluetooth-service
+park      2891  2090  0 10:52 ?        00:00:00 /usr/lib/x86_64-linux-gnu/indicator-power/indicator-power-service
+park      2893  2090  0 10:52 ?        00:00:00 /usr/lib/x86_64-linux-gnu/indicator-datetime/indicator-datetime-service
+park      2898  2090  0 10:52 ?        00:00:00 /usr/lib/x86_64-linux-gnu/indicator-keyboard/indicator-keyboard-service --use-gtk
+park      2903  2090  0 10:52 ?        00:00:00 /usr/lib/dconf/dconf-service
+park      2904  2090  0 10:52 ?        00:00:00 /usr/lib/x86_64-linux-gnu/indicator-sound/indicator-sound-service
+park      2906  2090  0 10:52 ?        00:00:00 /usr/lib/x86_64-linux-gnu/indicator-printers/indicator-printers-service
+park      2907  2090  0 10:52 ?        00:00:00 /usr/lib/x86_64-linux-gnu/indicator-session/indicator-session-service
+root      2912     2  0 10:52 ?        00:00:00 [kworker/1:1H]
+park      2913  2090  0 10:52 ?        00:00:02 /usr/lib/x86_64-linux-gnu/indicator-application/indicator-application-service
+park      2942  2090  0 10:52 ?        00:00:00 /usr/lib/evolution/evolution-source-registry
+park      2962  2090  0 10:52 ?        00:00:00 /usr/bin/pulseaudio --start --log-target=syslog
+park      2973  2827  0 10:52 ?        00:00:00 syndaemon -i 1.0 -t -K -R
+park      2985  2090  8 10:52 ?        00:14:00 compiz
+park      2998  2090  0 10:52 ?        00:00:00 /usr/lib/evolution/evolution-calendar-factory
+park      3008  2998  0 10:52 ?        00:00:00 /usr/lib/evolution/evolution-calendar-factory-subprocess --factory contacts --bus-name org.gnome.evolution.dataserver.Subprocess.Backend.Calendarx2998x2 --own-path /org/gnome/evolution/dataserver/Subprocess/Backend/Calendar/2998/2
+park      3018  2090  0 10:52 ?        00:00:00 /usr/lib/evolution/evolution-addressbook-factory
+park      3020  2998  0 10:52 ?        00:00:00 /usr/lib/evolution/evolution-calendar-factory-subprocess --factory local --bus-name org.gnome.evolution.dataserver.Subprocess.Backend.Calendarx2998x3 --own-path /org/gnome/evolution/dataserver/Subprocess/Backend/Calendar/2998/3
+park      3028  3018  0 10:52 ?        00:00:00 /usr/lib/evolution/evolution-addressbook-factory-subprocess --factory local --bus-name org.gnome.evolution.dataserver.Subprocess.Backend.AddressBookx3018x2 --own-path /org/gnome/evolution/dataserver/Subprocess/Backend/AddressBook/3018/2
+park      3059  2090  0 10:52 ?        00:00:00 /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+root      3062     1  0 10:52 ?        00:00:00 /usr/lib/udisks2/udisksd --no-debug
+park      3084  2090  0 10:52 ?        00:00:00 /usr/lib/gvfs/gvfs-goa-volume-monitor
+park      3089  2090  0 10:52 ?        00:00:00 /usr/lib/gvfs/gvfs-mtp-volume-monitor
+park      3094  2090  0 10:52 ?        00:00:00 /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+park      3099  2090  0 10:52 ?        00:00:00 /usr/lib/gvfs/gvfs-afc-volume-monitor
+park      3109  2090  0 10:52 ?        00:00:01 /usr/bin/nautilus --gapplication-service
+park      3114  2090  0 10:52 ?        00:00:00 /usr/lib/gvfs/gvfsd-trash --spawner :1.6 /org/gtk/gvfs/exec_spaw/0
+park      3124  2090  0 10:52 ?        00:00:00 /usr/lib/gvfs/gvfsd-metadata
+park      3159  2840  0 10:52 ?        00:00:02 /usr/bin/gnome-software --gapplication-service
+park      3160  2840  0 10:52 ?        00:00:00 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+park      3162  2840  0 10:52 ?        00:00:00 /usr/lib/unity-settings-daemon/unity-fallback-mount-helper
+park      3163  2840  0 10:52 ?        00:00:15 nm-applet
+root      3249     1  0 10:52 ?        00:00:00 /usr/lib/x86_64-linux-gnu/fwupd/fwupd
+park      3294  2090  0 10:52 ?        00:00:00 /usr/lib/x86_64-linux-gnu/unity-scope-home/unity-scope-home
+park      3304  2090  0 10:52 ?        00:00:00 /usr/bin/unity-scope-loader applications/applications.scope applications/scopes.scope commands.scope
+park      3306  2090  0 10:52 ?        00:00:00 /usr/lib/x86_64-linux-gnu/unity-lens-files/unity-files-daemon
+park      3317  2090  0 10:52 ?        00:00:00 /bin/sh -c /usr/lib/x86_64-linux-gnu/zeitgeist/zeitgeist-maybe-vacuum; /usr/bin/zeitgeist-daemon
+park      3321  3317  0 10:52 ?        00:00:00 /usr/bin/zeitgeist-daemon
+park      3328  2090  0 10:52 ?        00:00:00 /usr/lib/x86_64-linux-gnu/zeitgeist-fts
+park      3330  2090  0 10:52 ?        00:00:00 zeitgeist-datahub
+park      3374  2090  0 10:52 ?        00:00:18 /opt/teamviewer/tv_bin/TeamViewer
+park      3556  2090  0 10:53 ?        00:00:31 /usr/lib/gnome-terminal/gnome-terminal-server
+park      3561  3556  0 10:53 pts/19   00:00:00 bash
+park      3601  2840  0 10:53 ?        00:00:00 update-notifier
+park      3658  2090  1 10:54 ?        00:02:41 /usr/lib/firefox/firefox
+park      3718  3658  0 10:54 ?        00:00:04 /usr/lib/firefox/firefox -contentproc -childID 1 -isForBrowser -prefsLen 1 -prefMapSize 207223 -parentBuildID 20191031062442 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3658 true tab
+park      3806  3658  0 10:54 ?        00:00:03 /usr/lib/firefox/firefox -contentproc -childID 3 -isForBrowser -prefsLen 6295 -prefMapSize 207223 -parentBuildID 20191031062442 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3658 true tab
+park      3859  3658  0 10:54 ?        00:00:46 /usr/lib/firefox/firefox -contentproc -childID 4 -isForBrowser -prefsLen 7027 -prefMapSize 207223 -parentBuildID 20191031062442 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3658 true tab
+park      3896  2840  0 10:54 ?        00:00:00 /usr/lib/x86_64-linux-gnu/deja-dup/deja-dup-monitor
+park      3905  3658  0 10:54 ?        00:00:04 /usr/lib/firefox/firefox -contentproc -childID 5 -isForBrowser -prefsLen 7181 -prefMapSize 207223 -parentBuildID 20191031062442 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3658 true tab
+root      4227     2  0 11:07 ?        00:00:00 [kworker/5:2]
+root      4390     2  0 11:21 ?        00:00:00 [kworker/1:1]
+park      4639  3658  0 11:45 ?        00:00:16 /usr/lib/firefox/firefox -contentproc -childID 7 -isForBrowser -prefsLen 7456 -prefMapSize 207223 -parentBuildID 20191031062442 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3658 true tab
+park      4702  3561  0 11:48 pts/19   00:00:00 ./cntSig
+park      4710  3556  0 11:48 pts/20   00:00:00 bash
+root      4857     2  0 11:52 ?        00:00:05 [kworker/7:2]
+root      4930     2  0 11:55 ?        00:00:01 [kworker/9:2]
+park      4949  2090  4 11:56 ?        00:04:55 unity-control-center --overview
+root      5051     2  0 12:06 ?        00:00:00 [kworker/10:2]
+root      5472     2  0 12:11 ?        00:00:00 [kworker/1:0]
+root      6641     2  0 12:41 ?        00:00:05 [kworker/u24:3]
+park      6693  3658  1 12:46 ?        00:00:43 /usr/lib/firefox/firefox -contentproc -childID 8 -isForBrowser -prefsLen 7456 -prefMapSize 207223 -parentBuildID 20191031062442 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3658 true tab
+park      6734  2090  0 12:46 ?        00:00:26 evince /tmp/mozilla_park0/Linux_Network_&_System_Programming%B1%B3%C0%E7.pdf
+park      6740  2090  0 12:46 ?        00:00:00 /usr/lib/evince/evinced
+park      6773  2090  0 12:47 ?        00:00:00 /usr/lib/gvfs/gvfsd-network --spawner :1.6 /org/gtk/gvfs/exec_spaw/1
+park      6786  2090  0 12:47 ?        00:00:00 /usr/lib/gvfs/gvfsd-smb-browse --spawner :1.6 /org/gtk/gvfs/exec_spaw/3
+root      6799  2016  0 12:47 ?        00:00:00 /usr/sbin/smbd -D
+park      6808  2090  0 12:47 ?        00:00:00 /usr/lib/gvfs/gvfsd-dnssd --spawner :1.6 /org/gtk/gvfs/exec_spaw/5
+park      6830  3658  0 12:48 ?        00:00:04 /usr/lib/firefox/firefox -contentproc -childID 9 -isForBrowser -prefsLen 7456 -prefMapSize 207223 -parentBuildID 20191031062442 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3658 true tab
+park      6972  3658  0 12:50 ?        00:00:11 /usr/lib/firefox/firefox -contentproc -childID 11 -isForBrowser -prefsLen 7504 -prefMapSize 207223 -parentBuildID 20191031062442 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3658 true tab
+park      7160  3658  2 12:56 ?        00:01:07 /usr/lib/firefox/firefox -contentproc -childID 13 -isForBrowser -prefsLen 7504 -prefMapSize 207223 -parentBuildID 20191031062442 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appdir /usr/lib/firefox/browser 3658 true tab
+root      7275     2  0 12:59 ?        00:00:00 [kworker/4:0]
+root      7276     2  0 13:00 ?        00:00:01 [kworker/u24:2]
+root      7277     2  0 13:00 ?        00:00:00 [kworker/5:1]
+root      7296     2  0 13:02 ?        00:00:00 [kworker/9:0]
+root      7353     2  0 13:03 ?        00:00:00 [kworker/8:2]
+root      7354     2  0 13:03 ?        00:00:00 [kworker/2:2]
+root      7355     2  0 13:04 ?        00:00:00 [kworker/6:0]
+root      7367     2  0 13:04 ?        00:00:00 [kworker/0:0]
+root      7377     2  0 13:05 ?        00:00:01 [kworker/u24:1]
+root      7386     2  0 13:07 ?        00:00:00 [kworker/7:0]
+root      7387     2  0 13:07 ?        00:00:00 [kworker/9:1]
+root      7392     2  0 13:07 ?        00:00:00 [kworker/3:2]
+root      7393     2  0 13:07 ?        00:00:00 [kworker/10:0]
+root      7400     2  0 13:08 ?        00:00:00 [kworker/11:1]
+root      7408     2  0 13:09 ?        00:00:00 [kworker/6:1]
+root      7409     2  0 13:10 ?        00:00:00 [kworker/4:2]
+root      7410     2  0 13:10 ?        00:00:00 [kworker/u24:0]
+root      7417     2  0 13:10 ?        00:00:00 [kworker/5:0]
+root      7418     2  0 13:11 ?        00:00:00 [kworker/2:0]
+root      7419     2  0 13:11 ?        00:00:00 [kworker/0:2]
+root      7423     2  0 13:12 ?        00:00:00 [kworker/7:1]
+root      7433     2  0 13:13 ?        00:00:00 [kworker/10:1]
+root      7436     2  0 13:13 ?        00:00:00 [kworker/1:2]
+root      7472     2  0 13:13 ?        00:00:00 [kworker/3:0]
+root      7514     2  0 13:13 ?        00:00:00 [kworker/u24:4]
+root      7515     2  0 13:13 ?        00:00:00 [kworker/u24:5]
+root      7516     2  0 13:13 ?        00:00:00 [kworker/u24:6]
+root      7517     2  0 13:13 ?        00:00:00 [kworker/u24:7]
+root      7518     2  0 13:13 ?        00:00:00 [kworker/u24:8]
+root      7519     2  0 13:13 ?        00:00:00 [kworker/u24:9]
+root      7520     2  0 13:13 ?        00:00:00 [kworker/u24:10]
+root      7521     2  0 13:13 ?        00:00:00 [kworker/u24:11]
+root      7522     2  0 13:13 ?        00:00:00 [kworker/u24:12]
+root      7523     2  0 13:13 ?        00:00:00 [kworker/u24:13]
+root      7524     2  0 13:13 ?        00:00:00 [kworker/u24:14]
+root      7525     2  0 13:13 ?        00:00:00 [kworker/u24:15]
+root      7526     2  0 13:13 ?        00:00:00 [kworker/u24:16]
+root      7527     2  0 13:13 ?        00:00:00 [kworker/u24:17]
+root      7528     2  0 13:13 ?        00:00:00 [kworker/u24:18]
+root      7529     2  0 13:14 ?        00:00:00 [kworker/u24:19]
+root      7530     2  0 13:14 ?        00:00:00 [kworker/u24:20]
+root      7531     2  0 13:14 ?        00:00:00 [kworker/u24:21]
+root      7532     2  0 13:14 ?        00:00:00 [kworker/u24:22]
+root      7533     2  0 13:14 ?        00:00:00 [kworker/u24:23]
+root      7534     2  0 13:14 ?        00:00:00 [kworker/u24:24]
+root      7535     2  0 13:14 ?        00:00:00 [kworker/u24:25]
+root      7536     2  0 13:14 ?        00:00:00 [kworker/u24:26]
+root      7537     2  0 13:14 ?        00:00:00 [kworker/u24:27]
+root      7538     2  0 13:14 ?        00:00:00 [kworker/u24:28]
+root      7539     2  0 13:14 ?        00:00:00 [kworker/u24:29]
+root      7540     2  0 13:14 ?        00:00:00 [kworker/u24:30]
+root      7541     2  0 13:14 ?        00:00:00 [kworker/u24:31]
+root      7543     2  0 13:14 ?        00:00:00 [kworker/u24:32]
+root      7544     2  0 13:14 ?        00:00:00 [kworker/u24:33]
+root      7545     2  0 13:14 ?        00:00:00 [kworker/u24:34]
+root      7546     2  0 13:14 ?        00:00:00 [kworker/u24:35]
+root      7547     2  0 13:14 ?        00:00:00 [kworker/u24:36]
+root      7548     2  0 13:14 ?        00:00:00 [kworker/u24:37]
+root      7549     2  0 13:14 ?        00:00:00 [kworker/u24:38]
+root      7550     2  0 13:14 ?        00:00:00 [kworker/u24:39]
+root      7551     2  0 13:14 ?        00:00:00 [kworker/u24:40]
+root      7552     2  0 13:14 ?        00:00:00 [kworker/u24:41]
+root      7553     2  0 13:14 ?        00:00:00 [kworker/0:3]
+root      7556     2  0 13:14 ?        00:00:00 [kworker/6:3]
+root      7642     2  0 13:14 ?        00:00:00 [kworker/11:0]
+root      7902     2  0 13:14 ?        00:00:00 [kworker/8:0]
+root      7973     2  0 13:39 ?        00:00:00 [kworker/u24:42]
+root      7974     2  0 13:39 ?        00:00:00 [kworker/u24:43]
+root      7975     2  0 13:39 ?        00:00:00 [kworker/u24:44]
+root      7976     2  0 13:39 ?        00:00:00 [kworker/u24:45]
+root      7977     2  0 13:39 ?        00:00:00 [kworker/u24:46]
+root      7978     2  0 13:39 ?        00:00:00 [kworker/u24:47]
+root      7979     2  0 13:39 ?        00:00:00 [kworker/u24:48]
+root      7980     2  0 13:39 ?        00:00:00 [kworker/u24:49]
+root      7981     2  0 13:39 ?        00:00:00 [kworker/u24:50]
+root      7982     2  0 13:39 ?        00:00:00 [kworker/u24:51]
+root      7983     2  0 13:39 ?        00:00:00 [irq/126-mei_me]
+root      7984     2  0 13:39 ?        00:00:00 [kworker/u24:52]
+root      7985     2  0 13:39 ?        00:00:00 [kworker/u24:53]
+root      7986     2  0 13:39 ?        00:00:00 [kworker/2:3]
+root      7988     2  0 13:39 ?        00:00:00 [kworker/3:3]
+root      7989     2  0 13:39 ?        00:00:00 [kworker/3:4]
+root      8136  1123  0 13:39 ?        00:00:00 /sbin/dhclient -d -q -sf /usr/lib/NetworkManager/nm-dhcp-helper -pf /var/run/dhclient-wlo1.pid -lf /var/lib/NetworkManager/dhclient-66c9010c-719e-4b0e-86ee-22bc1539e8e1-wlo1.lease -cf /var/lib/NetworkManager/dhclient-wlo1.conf wlo1
+root      8382  2016  0 13:39 ?        00:00:00 /usr/sbin/smbd -D
+root      8396     2  0 13:39 ?        00:00:00 [kworker/8:3]
+park      8460  3561  0 13:42 pts/19   00:00:00 ps -ef

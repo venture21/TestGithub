@@ -14,7 +14,8 @@ int main(void)
 	// int execl(const char *path, const char *arg, ...)
 	// 디렉토리+파일이름을 path와 arg로 입력해 준다.
 	//====================================================
-	ret = execl("/bin/ps", "/bin/ps -ax", NULL);
+	//ret = execl("/bin/ps", "ps","-ax", NULL);
+	ret = execl("/home/park/TestGithub/adder","","30","42",NULL);
 	fprintf(stderr, "execl error: %s\n",strerror(errno));
 
 	printf("execl:%d\n",ret);
