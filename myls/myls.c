@@ -8,11 +8,16 @@
 #include <time.h>
 #include <pwd.h>	// getpwuid()
 #include <grp.h>	// getgrgid()
+#include <errno.h>
+#include "myColor.h"	// printf 색상을 넣기 위해
+
+#include <sys/ioctl.h>	// terminal창의 크기를 읽기 위해
+#include <termios.h>	// terminal창의 크기를 읽기 위해
 
 #define PERM_LENGTH 	11
 #define PATH_LENGTH 	100
 
-#define DEBUG
+//#define DEBUG
 
 //=========================================
 // dirent 구조체
@@ -79,6 +84,52 @@ struct passwd {
 }; 
 */
 
+
+int getColumSize(void)
+{
+
+    struct winsize ws;
+    ioctl(0, TIOCGWINSZ, &ws);
+
+    //printf ("lines %d\n", ws.ws_row);
+    //printf ("columns %d\n", ws.ws_col);
+
+    return ws.ws_col;
+}
+
+
+void print_inode(struct stat sb)
+{
+
+    printf("File type :");
+
+    switch(sb.st_mode & S_IFMT)
+    {
+        case S_IFBLK:  printf("block device\n");    break;
+        case S_IFCHR:  printf("char device\n");     break;
+        case S_IFDIR:  printf("directory\n");       break;
+        case S_IFIFO:  printf("FIFO\n");            break;
+        case S_IFLNK:  printf("symlink\n");         break;
+        case S_IFREG:  printf("regular file\n");    break;
+        case S_IFSOCK: printf("socket\n");          break;
+        default:       printf("unknown?\n");        break;
+    }
+
+    printf("I-node number:            %ld\n", (long) sb.st_ino);
+    printf("Mode:                     %lo (octal)\n", (unsigned long) sb.st_mode);
+    printf("Link count:               %ld\n", (long) sb.st_nlink);
+    printf("Ownership:                UID=%ld   GID=%ld\n", (long) sb.st_uid, (long) sb.st_gid);
+    printf("Preferred I/O block size: %ld bytes\n",         (long) sb.st_blksize);
+    printf("File size:                %lld bytes\n",        (long long) sb.st_size);
+    printf("Blocks allocated:         %lld\n",              (long long) sb.st_blocks);
+    printf("Last status change:       %s", ctime(&sb.st_ctime));
+    printf("Last file access:         %s", ctime(&sb.st_atime));
+    printf("Last file modification:   %s", ctime(&sb.st_mtime));
+    printf("\n");
+}
+
+
+
 //=========================================
 // Function Name : access Name
 // arg1 : permission value
@@ -115,7 +166,8 @@ int main(int argc, char *argv[])
 {
 	DIR *dp;		// DIR pointer
 	struct stat statbuf;	// inode info
-	struct dirent *dent;
+	//struct dirent *dent;
+	struct dirent **namelist;
 	struct group *group_entry;
 	struct passwd *user_pw;
 
@@ -124,12 +176,16 @@ int main(int argc, char *argv[])
 	char dirname[PATH_LENGTH];
 
 	int flag;
+	int idx, count;
 	char temp[20];
 
 	//time
 	struct tm *tm;
+	int columSize;
 
-
+//=================================================================
+// STEP 1. 인자값 받아들이기 & stat함수 사용하기
+//=================================================================
 	if (argc==1)	
 		flag = 0;
 		strcpy(dirname,".");
@@ -155,14 +211,24 @@ int main(int argc, char *argv[])
 		flag = 3;
 		strcpy(dirname, argv[2]);
 	}
+
+        // 디렉토리의 inode정보 읽기
+        stat(dirname, &statbuf);
 		
 #ifdef DEBUG	
+	printf("=============================================\n");
+	printf(" STEP 1. 인자값 및 inode값 출력하기 \n");
+	printf("=============================================\n");
 	printf("dir=%s\n",dirname);
+        printf("argv: %s %s %s\n",argv[0], argv[1], argv[2]);
 	printf("flag=%d\n",flag);
+	print_inode(statbuf);
 #endif
 
-	// 디렉토리의 inode정보 읽기
-	stat(dirname, &statbuf);
+//=================================================================
+// STEP 2. 디렉토리인지 확인하기
+//=================================================================
+
 
 	// 디렉토리가 아닌경우 에러 메시지 출력 후 종료
 	if (!S_ISDIR(statbuf.st_mode)) 
@@ -171,41 +237,68 @@ int main(int argc, char *argv[])
 		exit(1);
 	}
 
-	// 디렉토리가 정상적으로 열리지 않은 경우
-	if ((dp = opendir(dirname)) == NULL) 
-	{
-		perror("Error:");
-		exit(1);
-	}
-	
 #ifdef DEBUG
-	// 정상적으로 열리면 디렉토리명을 출력
-	printf("Lists of Directory(%s):\n", dirname);
+        printf("=============================================\n");
+        printf(" STEP 2. 디렉토리가 맞습니다\n");
+        printf("=============================================\n");
 #endif
 
-	// 디렉토리의 내용을 읽어온다. 
-	// 더이상 읽을 디렉토리 내용이 없을 때 까지
-	while((dent = readdir(dp)) != NULL) 
+
+//=================================================================
+// STEP 3. 디렉토리의 내용을 읽어온다.(더 이상 읽을 내용이 없을때까지
+//=================================================================
+	if((count = scandir(dirname, &namelist, NULL, alphasort)) == -1)
+	{
+		fprintf(stderr, "%s Directory Scan Error: %s\n", dirname, strerror(errno));
+		return 1;
+	}
+
+#ifdef DEBUG
+	columSize = getColumSize();
+	printf("columSize=%d\n",columsize);
+#endif
+
+	for(idx=0; idx<count; idx++)
 	{
 		if(flag==1 | flag==3)
 		{
-			sprintf(pathname, "%s/%s", dirname, dent->d_name);
+			// 파일의 종류, 권한, 링크 갯수, 소유자, 소유자그룹, 파일크기, 날짜, 시간을 출력
+			sprintf(pathname, "%s/%s", dirname, namelist[idx]->d_name);
 			lstat(pathname, &statbuf);
 			access_perm(perm, statbuf.st_mode);
+			// uid 값을 소유자 문자열로 변환
 			user_pw=getpwuid(statbuf.st_uid);
+
+			// gid 값을 그룹 문자열로 변환
 			group_entry=getgrgid(statbuf.st_gid);
+
+			//파일 수정 시간을 문자열로 변환 
 			tm = localtime(&statbuf.st_mtime); 
 			strftime(temp, sizeof(temp), "%m월 %e %H:%M", tm);
-			printf("%s %3ld %6s %6s %8ld %s %s\n", \
+
+			// 화면에 파일 정보를 출력
+			printf("%s %3ld %6s %6s %8ld %s ", \
 				perm, statbuf.st_nlink, user_pw->pw_name, \
-				group_entry->gr_name, statbuf.st_size, temp, dent->d_name);
+				group_entry->gr_name, statbuf.st_size, temp);
+
+			// 파일의 타입을 읽고 파일명에 색상을 입힌다.
+    			switch(statbuf.st_mode & S_IFMT)
+    			{
+        			case S_IFDIR:	printf(ANSI_COLOR_BLUE "%s" ANSI_COLOR_RESET "\n",namelist[idx]->d_name);       
+						break;
+        			case S_IFREG:	printf("%s\n",namelist[idx]->d_name);    
+						break;
+        			default:	printf("%s\n",namelist[idx]->d_name);       
+						break;
+    			}
+			
 		}
 		else
 		{
-			printf("%s
+			//
+                        printf("%s\n", namelist[idx]->d_name);
 		}
 	}
-	closedir(dp);
 
 	return 0;
 }
