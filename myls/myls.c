@@ -16,6 +16,7 @@
 
 #define PERM_LENGTH 	11
 #define PATH_LENGTH 	100
+#define NAME_LENGTH	30
 
 //#define DEBUG
 
@@ -177,7 +178,13 @@ int main(int argc, char *argv[])
 
 	int flag;
 	int idx, count;
+	int i;
 	char temp[20];
+	int maxLength;
+	int nameLength;
+	int colCount;
+	int rowCount;
+	char buf[NAME_LENGTH];
 
 	//time
 	struct tm *tm;
@@ -229,7 +236,6 @@ int main(int argc, char *argv[])
 // STEP 2. 디렉토리인지 확인하기
 //=================================================================
 
-
 	// 디렉토리가 아닌경우 에러 메시지 출력 후 종료
 	if (!S_ISDIR(statbuf.st_mode)) 
 	{
@@ -253,14 +259,26 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 
-#ifdef DEBUG
 	columSize = getColumSize();
-	printf("columSize=%d\n",columsize);
+#ifdef DEBUG
+	printf("columSize=%d\n",columSize);
 #endif
-
+	
+	// 현재
+	maxLength=0;
 	for(idx=0; idx<count; idx++)
 	{
-		if(flag==1 | flag==3)
+		nameLength = strlen(namelist[idx]->d_name);
+		if(maxLength < nameLength)
+			maxLength = nameLength;
+	}
+#ifdef DEBUG
+	printf("maxLength=%d\n",maxLength);
+#endif
+	
+	if(flag==1 | flag==3)
+	{
+		for(idx=0; idx<count; idx++)
 		{
 			// 경로 + 파일명을 pathname에 저장
 			sprintf(pathname, "%s/%s", dirname, namelist[idx]->d_name);
@@ -290,7 +308,7 @@ int main(int argc, char *argv[])
 			// 파일의 타입을 읽고 파일명에 색상을 입힌다.
     			switch(statbuf.st_mode & S_IFMT)
     			{
-        			case S_IFDIR:	printf(ANSI_COLOR_BLUE "%s" ANSI_COLOR_RESET "\n",namelist[idx]->d_name);       
+				case S_IFDIR:	printf(ANSI_COLOR_BLUE "%s" ANSI_COLOR_RESET "\n",namelist[idx]->d_name);
 						break;
         			case S_IFREG:	printf("%s\n",namelist[idx]->d_name);    
 						break;
@@ -299,12 +317,39 @@ int main(int argc, char *argv[])
     			}
 			
 		}
-		else
-		{
-			//
-                        printf("%s\n", namelist[idx]->d_name);
-		}
 	}
+	else
+	{
+
+		colCount = columSize/maxLength;
+#ifdef DEBUG
+		printf("colCount = %d\n", colCount);
+#endif
+		for(i=0;i<count;i++)
+		{
+			memset(buf, 0,sizeof(buf));
+			sprintf(buf, "%s",namelist[i]->d_name);
+			printf("%s",buf);
+			for(idx=0;idx<maxLength-strlen(buf);idx++)
+				printf(" ");
+
+			if((i%colCount)==colCount-2)
+				printf("\n");
+			else
+				printf("  ");
+			//sleep(1);
+			
+		}
+		printf("\n");
+	}
+        // 건별 데이터 메모리 해제 
+        for(idx = 0; idx < count; idx++)
+        {
+                free(namelist[idx]);
+        }
+
+        // namelist에 대한 메모리 해제 
+        free(namelist);
 
 	return 0;
 }
