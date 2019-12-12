@@ -262,10 +262,15 @@ int main(int argc, char *argv[])
 	{
 		if(flag==1 | flag==3)
 		{
-			// 파일의 종류, 권한, 링크 갯수, 소유자, 소유자그룹, 파일크기, 날짜, 시간을 출력
+			// 경로 + 파일명을 pathname에 저장
 			sprintf(pathname, "%s/%s", dirname, namelist[idx]->d_name);
+
+			// lstat을 통해 inode정보를 읽어온다.
 			lstat(pathname, &statbuf);
+
+			// 파일의 종류와 권한 정보를 문자열로 변환한다.  
 			access_perm(perm, statbuf.st_mode);
+
 			// uid 값을 소유자 문자열로 변환
 			user_pw=getpwuid(statbuf.st_uid);
 
@@ -276,7 +281,8 @@ int main(int argc, char *argv[])
 			tm = localtime(&statbuf.st_mtime); 
 			strftime(temp, sizeof(temp), "%m월 %e %H:%M", tm);
 
-			// 화면에 파일 정보를 출력
+			// 화면에 아래 정보를 출력
+			// 파일의 종류, 권한, 링크 갯수, 소유자, 소유자그룹, 파일크기, 날짜, 시간을 출력
 			printf("%s %3ld %6s %6s %8ld %s ", \
 				perm, statbuf.st_nlink, user_pw->pw_name, \
 				group_entry->gr_name, statbuf.st_size, temp);
